@@ -12,10 +12,10 @@ int main(void)
 
 	for(i = 0; i < 26; i++)
 	{
-		putchar(alphabeet[i]);
+		putchar(alphabet[i]);
 	}
 
-	putchar("\n");
+	putchar('\n');
 
 	return (0);
 }
