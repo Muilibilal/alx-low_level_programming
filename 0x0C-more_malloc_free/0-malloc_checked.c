@@ -1,46 +1,19 @@
 #include "main.h"
 
 /**
- * string_nconcat - a function that concatenates two strings.
+ * malloc_checked - cause normal process termination with a status value of 98
  *
- * @s1: first char
- * @s2: secound char
- * @n: unsigned int
+ * @b: allocated memory
  *
- * Return: If the function fails, it should return NULL
+ * Return: a pointer to the allocated memory
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+void *malloc_checked(unsigned int b)
 {
-	unsigned int x, y, z;
-	char *s;
+	void *i;
 
-	if (s1 == NULL)
-	{
-		x = 0;
-	}
-	else
-	{
-		for (x = 0; s1[x]; ++x)
-		;
-	}
-	if (s2 == NULL)
-	{
-		y = 0;
-	}
-	else
-	{
-		for (y = 0; s2[y]; ++y)
-		;
-	}
-	if (y > n)
-		y = n;
-	s = malloc(sizeof(char) * (x + y + 1));
-	if (s == NULL)
-		return (NULL);
-	for (z = 0; z < x; z++)
-		s[z] = s1[z];
-	for (z = 0; z < y; z++)
-		s[z + x] = s2[z];
-	s[x + y] = '\0';
-	return (s);
+	i = malloc(b);
+	if (i == NULL)
+		exit(98);
+	return (i);
+
 }
